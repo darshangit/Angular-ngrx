@@ -6,6 +6,9 @@ export function companyReducer(state = [], action: companyActions.Action) {
             return action.payload;
       }
 
+      case companyActions.DELETE_COMPANIES_SUCCESS: {
+            return state.filter(company => company.id !== action.payload);
+      }
       default: {
           return state;
       }
